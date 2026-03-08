@@ -1,5 +1,6 @@
 import { type FC } from 'react'
 import Logo from '@/assets/logo.svg'
+import Image from 'next/image'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { Menu } from 'lucide-react'
@@ -15,8 +16,9 @@ const Header: FC = () => {
 					<div className='relative'>
 						<ul className={styles.header__list}>
 							<li className={cn(styles.header__logo, styles.header__item)}>
-								<Link href='/' className={styles.header__logo__link}>
-									<Logo />
+								<Link href='/' className={styles.header__logo__link} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+									<Image src="/icon.png" alt="ProtoFlow Logo" width={20} height={20} style={{ borderRadius: '5px' }} />
+									<span style={{ fontSize: '13px', fontWeight: 600, color: 'currentColor' }}>ProtoFlow</span>
 								</Link>
 							</li>
 
@@ -73,27 +75,13 @@ const Header: FC = () => {
 								className={cn(
 									styles.header__item,
 									styles.header__button,
-									styles.header__login,
-								)}>
-								<Link
-									className={cn(styles.header__link, styles.button__login)}
-									href='#'>
-									{' '}
-									Log in <kbd className={styles.header__kbd}> L </kbd>
-								</Link>
-							</li>
-
-							<li
-								className={cn(
-									styles.header__item,
-									styles.header__button,
 									styles.header__signup,
 								)}>
 								<Link
 									className={cn(styles.header__link, styles.button__signup)}
 									href='#'>
 									{' '}
-									Sign up
+									Get Started
 								</Link>
 							</li>
 

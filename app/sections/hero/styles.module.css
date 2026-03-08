@@ -94,16 +94,9 @@
 
 .hero__illustration__inbox {
 	@apply absolute left-[var(--Sidebar-width)] h-full;
+	right: 0;
 	inset-block: 8px;
-}
-
-.hero__illustration__inbox::after {
-	@apply content-[''] pointer-events-none absolute -inset-2;
-	background: linear-gradient(
-		to right,
-		transparent 80%,
-		var(--color-bg-primary) 90%
-	);
+	width: calc(100% - var(--Sidebar-width));
 }
 
 @media (max-width: 640px) {

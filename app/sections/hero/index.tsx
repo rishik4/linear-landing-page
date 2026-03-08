@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils'
 import BlurPopUp from '@/components/blur-pop-up'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
-import Inbox from '@/assets/inbox.svg'
 import Sidebar from './components/sidebar'
+import SchematicEditor from './components/schematic-editor'
 import IllustrateAnimate from '@/components/illustrate-animate'
 
 const Hero: FC = () => {
@@ -15,21 +15,21 @@ const Hero: FC = () => {
 		<section className={styles.hero}>
 			<LayoutWrapper>
 				<h1 className={cn(styles.heading, styles.hide__mobile)}>
-					<BlurPopUpByWord text='Linear is a purpose-built tool for planning and building products' />
+					<BlurPopUpByWord text='ProtoFlow is an AI-native tool for designing and building schematics' />
 				</h1>
 
 				<h1 className={cn(styles.heading, styles.show__mobile, 'text-center')}>
-					<BlurPopUpByWord text='Plan and build your product' />
+					<BlurPopUpByWord text='Design circuits with AI' />
 				</h1>
 
 				<BlurPopUp delay={1}>
 					<h2 className={cn(styles.sub__heading, styles.hide__mobile)}>
-						Meet the system for modern software development. Streamline issues,
-						projects, and product roadmaps.
+						Meet the AI copilot for PCB design. Streamline symbol search,
+						auto wiring, and intelligent design assistance.
 					</h2>
 					<h2 className={cn(styles.sub__heading, styles.show__mobile)}>
-						Linear is a purpose-built tool for modern product development.
-						Streamline issues, projects, and product roadmaps.
+						ProtoFlow is an AI-native tool for modern hardware design.
+						Streamline symbol search, schematics, and exports.
 					</h2>
 				</BlurPopUp>
 
@@ -37,13 +37,13 @@ const Hero: FC = () => {
 					<BlurPopUp delay={1.1}>
 						<Link className={styles.start__link} href='#'>
 							{' '}
-							Start building{' '}
+							Get Started{' '}
 						</Link>
 					</BlurPopUp>
 
 					<BlurPopUp delay={1.15}>
 						<Link className={styles.intoducing__link} href='#'>
-							<span>Introducing Initiatives</span>
+							<span>View Documentation</span>
 							<ChevronRight />
 						</Link>
 					</BlurPopUp>
@@ -56,12 +56,9 @@ const Hero: FC = () => {
 								<div className={styles.hero__illustration__sidebar}>
 									<Sidebar />
 								</div>
-								<IllustrateAnimate
-									delay={2}
-									duration={1.4}
-									className={styles.hero__illustration__inbox}>
-									<Inbox />
-								</IllustrateAnimate>
+								<div className={styles.hero__illustration__inbox}>
+									<SchematicEditor />
+								</div>
 							</div>
 						</div>
 					</div>
