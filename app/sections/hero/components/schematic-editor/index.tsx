@@ -6,32 +6,124 @@ const SchematicEditor: FC = () => {
 		<div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', background: '#1a1d21' }}>
 			{/* Toolbar row */}
 			<IllustrateAnimate delay={1.8} duration={1}>
-				<div style={{ display: 'flex', alignItems: 'center', gap: '2px', padding: '3px 6px', borderBottom: '1px solid #252525', height: '34px', background: '#141618' }}>
-					<div style={{ width: '26px', height: '26px', borderRadius: '5px', background: '#2563eb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-						<svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>
+				<div style={{ display: 'flex', alignItems: 'center', gap: '2px', padding: '3px 6px', borderBottom: '1px solid #252525', height: '36px', background: '#141618' }}>
+					{/* Tools Section */}
+					{/* Select (active) */}
+					<div style={{ width: '28px', height: '28px', borderRadius: '6px', background: 'rgba(37,99,235,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="#60a5fa"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>
 					</div>
-					{[...Array(4)].map((_, i) => (
-						<div key={i} style={{ width: '26px', height: '26px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-							<div style={{ width: '14px', height: '14px', borderRadius: '2px', border: '1.5px solid #444' }} />
-						</div>
-					))}
-					<div style={{ width: '1px', height: '18px', background: '#252525', margin: '0 3px' }} />
-					{[...Array(6)].map((_, i) => (
-						<div key={`s${i}`} style={{ width: '26px', height: '26px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-							<div style={{ width: '13px', height: '13px', borderRadius: i > 3 ? '6px' : '2px', border: '1.5px solid #3a3a3a' }} />
-						</div>
-					))}
-					<div style={{ width: '1px', height: '18px', background: '#252525', margin: '0 3px' }} />
-					<div style={{ display: 'flex', alignItems: 'center', gap: '4px', padding: '4px 12px', borderRadius: '6px', border: '1px solid #2563eb', background: 'rgba(37,99,235,0.08)' }}>
-						<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+					{/* Pan */}
+					<div style={{ width: '28px', height: '28px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M18 11V6a2 2 0 00-4 0v5m0 0V4a2 2 0 00-4 0v7m0 0V7a2 2 0 00-4 0v6l-1.5-1.5a2 2 0 00-2.83 2.83L8 21h8a4 4 0 004-4v-5a2 2 0 00-4 0v1"/></svg>
+					</div>
+					{/* Wire */}
+					<div style={{ width: '28px', height: '28px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="1.8" strokeLinecap="round"><line x1="3" y1="8" x2="12" y2="8"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="12" y1="16" x2="21" y2="16"/><circle cx="3" cy="8" r="2" fill="#666" stroke="none"/><circle cx="21" cy="16" r="2" fill="#666" stroke="none"/></svg>
+					</div>
+
+					{/* Separator */}
+					<div style={{ width: '1px', height: '20px', background: '#252525', margin: '0 3px' }} />
+
+					{/* Components Section */}
+					{/* Resistor */}
+					<div style={{ width: '28px', height: '28px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="16" height="14" viewBox="0 0 28 14" fill="none" stroke="#666" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="0,7 4,7 6,1 10,13 14,1 18,13 22,1 24,7 28,7"/></svg>
+					</div>
+					{/* Capacitor */}
+					<div style={{ width: '28px', height: '28px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round"><line x1="12" y1="2" x2="12" y2="8"/><line x1="5" y1="8" x2="19" y2="8"/><line x1="5" y1="14" x2="19" y2="14"/><line x1="12" y1="14" x2="12" y2="22"/></svg>
+					</div>
+
+					{/* Separator */}
+					<div style={{ width: '1px', height: '20px', background: '#252525', margin: '0 3px' }} />
+
+					{/* Power Section */}
+					{/* VCC */}
+					<div style={{ width: '28px', height: '28px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round"><line x1="12" y1="20" x2="12" y2="8"/><line x1="6" y1="8" x2="18" y2="8"/></svg>
+					</div>
+					{/* GND */}
+					<div style={{ width: '28px', height: '28px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round"><line x1="12" y1="4" x2="12" y2="10"/><line x1="5" y1="10" x2="19" y2="10"/><line x1="7" y1="14" x2="17" y2="14"/><line x1="9" y1="18" x2="15" y2="18"/></svg>
+					</div>
+					{/* Net Label */}
+					<div style={{ width: '28px', height: '28px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 7h10l4 5-4 5H5V7z"/></svg>
+					</div>
+
+					{/* Separator */}
+					<div style={{ width: '1px', height: '20px', background: '#252525', margin: '0 3px' }} />
+
+					{/* Annotations Section */}
+					{/* Text */}
+					<div style={{ width: '28px', height: '28px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="#666"><path d="M5 4v3h5.5v12h3V7H19V4z"/></svg>
+					</div>
+					{/* Rectangle */}
+					<div style={{ width: '28px', height: '28px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="1"/></svg>
+					</div>
+					{/* Line */}
+					<div style={{ width: '28px', height: '28px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="1.8" strokeLinecap="round"><line x1="4" y1="20" x2="20" y2="4"/></svg>
+					</div>
+					{/* Circle */}
+					<div style={{ width: '28px', height: '28px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="1.8"><circle cx="12" cy="12" r="9"/></svg>
+					</div>
+
+					{/* Separator */}
+					<div style={{ width: '1px', height: '20px', background: '#252525', margin: '0 3px' }} />
+
+					{/* Place Component button */}
+					<div style={{ display: 'flex', alignItems: 'center', gap: '5px', padding: '4px 12px', borderRadius: '6px', border: '1px solid #2563eb', background: 'rgba(37,99,235,0.08)' }}>
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="1.5">
+							<rect x="7" y="3" width="10" height="18" rx="1.5"/>
+							<line x1="2" y1="7" x2="7" y2="7" strokeLinecap="round"/>
+							<line x1="2" y1="12" x2="7" y2="12" strokeLinecap="round"/>
+							<line x1="2" y1="17" x2="7" y2="17" strokeLinecap="round"/>
+							<line x1="17" y1="7" x2="22" y2="7" strokeLinecap="round"/>
+							<line x1="17" y1="12" x2="22" y2="12" strokeLinecap="round"/>
+							<line x1="17" y1="17" x2="22" y2="17" strokeLinecap="round"/>
+							<circle cx="2" cy="7" r="1" fill="#60a5fa" stroke="none"/>
+							<circle cx="2" cy="12" r="1" fill="#60a5fa" stroke="none"/>
+							<circle cx="2" cy="17" r="1" fill="#60a5fa" stroke="none"/>
+							<circle cx="22" cy="7" r="1" fill="#60a5fa" stroke="none"/>
+							<circle cx="22" cy="12" r="1" fill="#60a5fa" stroke="none"/>
+							<circle cx="22" cy="17" r="1" fill="#60a5fa" stroke="none"/>
+						</svg>
 						<span style={{ fontSize: '11px', color: '#60a5fa', fontWeight: 600 }}>Place Component</span>
 					</div>
+
 					<div style={{ flex: 1 }} />
-					{[...Array(5)].map((_, i) => (
-						<div key={`a${i}`} style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-							<div style={{ width: '11px', height: '11px', borderRadius: '2px', border: '1.5px solid #333' }} />
-						</div>
-					))}
+
+					{/* Right side: History + Transform/View */}
+					{/* Undo */}
+					<div style={{ width: '26px', height: '26px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="#555"><path d="M12.5 8c-2.65 0-5.05 1.04-6.83 2.73L3 8v9h9l-2.72-2.72A7.49 7.49 0 0112.5 10c2.88 0 5.39 1.65 6.63 4.04l1.77-1.02A9.49 9.49 0 0012.5 8z"/></svg>
+					</div>
+					{/* Redo */}
+					<div style={{ width: '26px', height: '26px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="#555"><path d="M18.4 10.6C16.55 9 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16a8.002 8.002 0 017.6-5.5c1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z"/></svg>
+					</div>
+					{/* Separator */}
+					<div style={{ width: '1px', height: '20px', background: '#252525', margin: '0 2px' }} />
+					{/* Rotate */}
+					<div style={{ width: '26px', height: '26px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="#555"><path d="M15.55 5.55L11 1v3.07C7.06 4.56 4 7.92 4 12s3.06 7.44 7 7.93v-2.02c-2.84-.48-5-2.94-5-5.91s2.16-5.43 5-5.91V10l4.55-4.45zM19.93 11a7.9 7.9 0 00-1.62-3.89l-1.42 1.42c.54.75.88 1.6 1.02 2.47h2.02zM13 17.9v2.02c1.39-.17 2.74-.71 3.9-1.61l-1.44-1.44c-.75.54-1.59.89-2.46 1.03zm3.89-2.42l1.42 1.41A7.9 7.9 0 0019.93 13h-2.02a5.9 5.9 0 01-1.02 2.48z"/></svg>
+					</div>
+					{/* Mirror/Flip */}
+					<div style={{ width: '26px', height: '26px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="#555"><path d="M15 21h2v-2h-2v2zm4-12h2V7h-2v2zm-2 8h-2v2h2v-2zm-4 4v-2H9v2h4zM3 21h2v-2H3v2zm8-16h2V3h-2v2zM5 9H3v2h2V9zm0 4H3v2h2v-2zm8 8h2v-2h-2v2zM9 3H7v2h2V3zM5 5H3v2h2V5zm14 0h-2v2h2V5zm0 8h2v-2h-2v2zm-4-8h-2v2h2V5z"/></svg>
+					</div>
+					{/* Delete */}
+					<div style={{ width: '26px', height: '26px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="#555"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+					</div>
+					{/* Grid toggle */}
+					<div style={{ width: '26px', height: '26px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+						<svg width="13" height="13" viewBox="0 0 24 24" fill="#555"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 20H4v-4h4v4zm0-6H4v-4h4v4zm0-6H4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4z"/></svg>
+					</div>
 					<span style={{ fontSize: '10px', color: '#888', marginLeft: '4px' }}>81%</span>
 				</div>
 			</IllustrateAnimate>
@@ -90,10 +182,14 @@ const SchematicEditor: FC = () => {
 							<text x="165" y="246" fill="#22c55e" fontSize="10" fontFamily="monospace">1k</text>
 							<polyline points="192,200 178,212 206,224 178,236 206,248 178,260 206,272 192,284" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinejoin="round" />
 
-							{/* Wire: R10 → down to Q2 base (vertical) */}
-							<line x1="192" y1="284" x2="192" y2="320" stroke="#00b4d8" strokeWidth="2.5" />
-							{/* Wire: R10 bottom → right to Q2 base (horizontal) */}
-							<line x1="192" y1="320" x2="300" y2="320" stroke="#00b4d8" strokeWidth="2.5" />
+							{/* Wire: R10 → shared junction (vertical) */}
+							<line x1="192" y1="284" x2="192" y2="280" stroke="#00b4d8" strokeWidth="2.5" />
+							{/* Wire: shared junction → Q2 base (horizontal) */}
+							<line x1="192" y1="280" x2="308" y2="280" stroke="#00b4d8" strokeWidth="2.5" />
+							{/* Wire: shared junction → R11 top (vertical) */}
+							<line x1="192" y1="280" x2="192" y2="340" stroke="#00b4d8" strokeWidth="2.5" />
+							{/* Junction dot for R10, R11, and Q2 */}
+							<circle cx="192" cy="280" r="4" fill="#00b4d8" />
 
 							{/* Q2 2N3906 transistor */}
 							<circle cx="340" cy="280" r="32" fill="none" stroke="#22c55e" strokeWidth="2" />
@@ -163,12 +259,6 @@ const SchematicEditor: FC = () => {
 
 							{/* === RIGHT SECTION: Op-amp stage === */}
 
-							{/* +9V power */}
-							<line x1="540" y1="110" x2="560" y2="110" stroke="#22c55e" strokeWidth="2" />
-							<line x1="550" y1="102" x2="550" y2="110" stroke="#22c55e" strokeWidth="2" />
-							<text x="538" y="100" fill="#22c55e" fontSize="10" fontFamily="monospace">+9V</text>
-							<line x1="550" y1="110" x2="550" y2="150" stroke="#00b4d8" strokeWidth="2.5" />
-
 							{/* Guitar Signal label */}
 							<text x="620" y="108" fill="#888" fontSize="9" fontFamily="monospace" textAnchor="middle">Guitar Signal</text>
 							<text x="620" y="122" fill="#888" fontSize="9" fontFamily="monospace" textAnchor="middle">Clamping/Clipping</text>
@@ -191,11 +281,11 @@ const SchematicEditor: FC = () => {
 							<line x1="480" y1="120" x2="480" y2="190" stroke="#00b4d8" strokeWidth="2.5" />
 							<line x1="380" y1="120" x2="480" y2="120" stroke="#00b4d8" strokeWidth="2.5" />
 
-							{/* Vadc label */}
-							<rect x="596" y="198" width="40" height="16" rx="3" fill="none" stroke="#f59e0b" strokeWidth="1.5" />
-							<text x="616" y="210" fill="#f59e0b" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="600">Vadc</text>
-							{/* Wire: op-amp output → Vadc (horizontal) */}
-							<line x1="590" y1="205" x2="596" y2="205" stroke="#00b4d8" strokeWidth="2.5" />
+							{/* Wire: op-amp output → right (horizontal) */}
+							<line x1="590" y1="205" x2="640" y2="205" stroke="#00b4d8" strokeWidth="2.5" />
+							{/* Vadc label - on the end of the output wire */}
+							<rect x="640" y="197" width="40" height="16" rx="3" fill="none" stroke="#f59e0b" strokeWidth="1.5" />
+							<text x="660" y="209" fill="#f59e0b" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="600">Vadc</text>
 
 							{/* Op-amp U3 LM324 (bottom) */}
 							<polygon points="510,340 510,450 590,395" fill="none" stroke="#22c55e" strokeWidth="2" />
@@ -206,10 +296,11 @@ const SchematicEditor: FC = () => {
 							<text x="540" y="476" fill="#22c55e" fontSize="8" fontFamily="monospace" textAnchor="middle">GND</text>
 							<text x="540" y="488" fill="#22c55e" fontSize="7" fontFamily="monospace" textAnchor="middle">#PWR011</text>
 
-							{/* Wire: top op-amp output → down → bottom op-amp input (orthogonal) */}
-							<line x1="590" y1="205" x2="640" y2="205" stroke="#00b4d8" strokeWidth="2" />
-							<line x1="640" y1="205" x2="640" y2="380" stroke="#00b4d8" strokeWidth="2" />
-							<line x1="640" y1="380" x2="510" y2="380" stroke="#00b4d8" strokeWidth="2" />
+							{/* Wire: top op-amp output feedback → down → bottom op-amp input (orthogonal) */}
+							<line x1="620" y1="205" x2="620" y2="380" stroke="#00b4d8" strokeWidth="2" />
+							<line x1="620" y1="380" x2="510" y2="380" stroke="#00b4d8" strokeWidth="2" />
+							{/* Junction dot on output wire for feedback */}
+							<circle cx="620" cy="205" r="3.5" fill="#00b4d8" />
 
 							{/* Wire: bottom op-amp − input */}
 							<line x1="480" y1="410" x2="510" y2="410" stroke="#00b4d8" strokeWidth="2" />

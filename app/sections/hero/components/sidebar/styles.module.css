@@ -1,3 +1,8 @@
+.sidebar {
+	@apply flex flex-col h-full w-full;
+	transform-style: preserve-3d;
+}
+
 .sidebar .top__container {
 	@apply flex items-center justify-between mb-[14px];
 	padding-inline: 4px;
@@ -23,7 +28,15 @@
 	transform-style: preserve-3d;
 }
 
+.sidebar .top__title {
+	margin-left: auto;
+}
+
+.sidebar .full__width {
+	@apply w-full;
+}
+
 .sidebar .sidebar__dropdown__outter__container {
-	@apply flex flex-col gap-4;
+	@apply flex flex-col gap-4 h-full w-full;
 	transform-style: preserve-3d;
 }

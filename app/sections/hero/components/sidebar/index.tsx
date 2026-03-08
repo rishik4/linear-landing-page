@@ -12,7 +12,7 @@ const Sidebar: FC = () => {
 					<div style={{ background: '#febc2e' }} />
 					<div style={{ background: '#28c840' }} />
 				</IllustrateAnimate>
-				<IllustrateAnimate delay={2.7} className={styles.illustrate__animate}>
+				<IllustrateAnimate delay={2.7} className={`${styles.illustrate__animate} ${styles.top__title}`}>
 					<div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
 						<span style={{ fontSize: '12px', fontWeight: 700, color: '#e0e0e0', fontFamily: 'system-ui' }}>Protoflow</span>
 						<span style={{ fontSize: '9px', color: '#7aa2f7', background: '#1a2332', padding: '1px 6px', borderRadius: '3px', fontWeight: 700, letterSpacing: '0.5px' }}>BETA</span>
@@ -21,8 +21,8 @@ const Sidebar: FC = () => {
 			</div>
 
 			{/* Menu bar */}
-			<IllustrateAnimate delay={2.5} className={styles.illustrate__animate}>
-				<div style={{ display: 'flex', gap: '14px', padding: '6px 6px 8px', borderBottom: '1px solid #1e1e1e' }}>
+			<IllustrateAnimate delay={2.5} className={`${styles.illustrate__animate} ${styles.full__width}`}>
+					<div style={{ display: 'flex', gap: '14px', width: '100%', padding: '6px 6px 8px', borderBottom: '1px solid #1e1e1e' }}>
 					{['File', 'Edit', 'View', 'Place', 'Tools', 'Help'].map((item) => (
 						<span key={item} style={{ fontSize: '11px', color: '#999', fontWeight: 500, fontFamily: 'system-ui' }}>{item}</span>
 					))}
@@ -30,8 +30,8 @@ const Sidebar: FC = () => {
 			</IllustrateAnimate>
 
 			{/* Project Explorer header */}
-			<IllustrateAnimate delay={2.3} className={styles.illustrate__animate}>
-				<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 6px 6px', borderBottom: '1px solid #1a1a1a' }}>
+			<IllustrateAnimate delay={2.3} className={`${styles.illustrate__animate} ${styles.full__width}`}>
+					<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', padding: '8px 6px 6px', borderBottom: '1px solid #1a1a1a' }}>
 					<div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
 						<span style={{ fontSize: '9px', color: '#555' }}>≡</span>
 						<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
@@ -47,13 +47,13 @@ const Sidebar: FC = () => {
 
 			{/* File tree */}
 			<div className={styles.sidebar__dropdown__outter__container}>
-				<IllustrateAnimate delay={2.1} className={styles.illustrate__animate}>
-					<div style={{ display: 'flex', flexDirection: 'column', gap: '1px', padding: '4px 6px' }}>
-						<div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 6px', borderRadius: '4px', fontSize: '11px', color: '#777' }}>
+					<IllustrateAnimate delay={2.1} className={`${styles.illustrate__animate} ${styles.full__width}`}>
+						<div style={{ display: 'flex', flexDirection: 'column', gap: '1px', width: '100%', padding: '4px 6px' }}>
+							<div style={{ display: 'flex', alignItems: 'center', gap: '6px', width: '100%', padding: '4px 6px', borderRadius: '4px', fontSize: '11px', color: '#777' }}>
 							<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
 							<span style={{ fontStyle: 'italic', color: '#666' }}>asdfdsf.kicad_sch</span>
 						</div>
-						<div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 6px', borderRadius: '5px', background: '#1a2332', border: '1px solid #253350', fontSize: '11px', color: '#e0e0e0' }}>
+							<div style={{ display: 'flex', alignItems: 'center', gap: '6px', width: '100%', padding: '4px 6px', borderRadius: '5px', background: '#1a2332', border: '1px solid #253350', fontSize: '11px', color: '#e0e0e0' }}>
 							<svg width="11" height="11" viewBox="0 0 24 24" fill="#3b82f6" stroke="#3b82f6" strokeWidth="0"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
 							<span style={{ fontWeight: 500 }}>Guitar_waveform_proj...</span>
 							<span style={{ marginLeft: 'auto', color: '#f59e0b', fontSize: '8px' }}>●</span>
