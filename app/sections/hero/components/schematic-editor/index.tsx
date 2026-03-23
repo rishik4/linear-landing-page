@@ -147,8 +147,12 @@ const SchematicEditor: FC = () => {
 				{/* Schematic canvas */}
 				<div style={{ flex: 1, position: 'relative', overflow: 'hidden', background: '#1a1d21' }}>
 					{/* Grid */}
-					<div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(#222 1px, transparent 1px), linear-gradient(90deg, #222 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-					<div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(#282828 1px, transparent 1px), linear-gradient(90deg, #282828 1px, transparent 1px)', backgroundSize: '128px 128px' }} />
+					<IllustrateAnimate delay={2.2} duration={1}>
+						<div style={{ position: 'absolute', inset: 0 }}>
+							<div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(#222 1px, transparent 1px), linear-gradient(90deg, #222 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+							<div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(#282828 1px, transparent 1px), linear-gradient(90deg, #282828 1px, transparent 1px)', backgroundSize: '128px 128px' }} />
+						</div>
+					</IllustrateAnimate>
 
 					{/* Circuit SVG - all wires strictly horizontal/vertical */}
 					<IllustrateAnimate delay={2.4} duration={1.4} className="absolute inset-0">
@@ -171,19 +175,19 @@ const SchematicEditor: FC = () => {
 							<line x1="380" y1="120" x2="380" y2="170" stroke="#00b4d8" strokeWidth="2.5" />
 
 							{/* +3.3V power symbol */}
-							<line x1="180" y1="168" x2="204" y2="168" stroke="#22c55e" strokeWidth="2" />
-							<line x1="192" y1="160" x2="192" y2="168" stroke="#22c55e" strokeWidth="2" />
-							<text x="170" y="158" fill="#22c55e" fontSize="10" fontFamily="monospace">+3.3V</text>
+							<line x1="180" y1="155" x2="204" y2="155" stroke="#22c55e" strokeWidth="2" />
+							<line x1="192" y1="147" x2="192" y2="155" stroke="#22c55e" strokeWidth="2" />
+							<text x="170" y="143" fill="#22c55e" fontSize="10" fontFamily="monospace">+3.3V</text>
 							{/* Wire: +3.3V down to R10 (vertical) */}
-							<line x1="192" y1="168" x2="192" y2="200" stroke="#00b4d8" strokeWidth="2.5" />
+							<line x1="192" y1="155" x2="192" y2="180" stroke="#00b4d8" strokeWidth="2.5" />
 
 							{/* R10 1k (vertical resistor) */}
-							<text x="160" y="230" fill="#22c55e" fontSize="11" fontFamily="monospace" fontWeight="600">R10</text>
-							<text x="165" y="246" fill="#22c55e" fontSize="10" fontFamily="monospace">1k</text>
-							<polyline points="192,200 178,212 206,224 178,236 206,248 178,260 206,272 192,284" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinejoin="round" />
+							<text x="148" y="200" fill="#22c55e" fontSize="11" fontFamily="monospace" fontWeight="600">R10</text>
+							<text x="153" y="216" fill="#22c55e" fontSize="10" fontFamily="monospace">1k</text>
+							<polyline points="192,180 178,192 206,204 178,216 206,228 178,240 206,252 192,264" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinejoin="round" />
 
 							{/* Wire: R10 → shared junction (vertical) */}
-							<line x1="192" y1="284" x2="192" y2="280" stroke="#00b4d8" strokeWidth="2.5" />
+							<line x1="192" y1="264" x2="192" y2="280" stroke="#00b4d8" strokeWidth="2.5" />
 							{/* Wire: shared junction → Q2 base (horizontal) */}
 							<line x1="192" y1="280" x2="308" y2="280" stroke="#00b4d8" strokeWidth="2.5" />
 							{/* Wire: shared junction → R11 top (vertical) */}
@@ -268,9 +272,8 @@ const SchematicEditor: FC = () => {
 							<polygon points="510,150 510,260 590,205" fill="none" stroke="#22c55e" strokeWidth="2" />
 							<text x="525" y="198" fill="#22c55e" fontSize="10" fontFamily="monospace">+</text>
 							<text x="525" y="228" fill="#22c55e" fontSize="10" fontFamily="monospace">−</text>
-							<text x="540" y="146" fill="#22c55e" fontSize="11" fontFamily="monospace" textAnchor="middle" fontWeight="600">U3</text>
+							<text x="540" y="146" fill="#22c55e" fontSize="11" fontFamily="monospace" textAnchor="middle" fontWeight="600">U2</text>
 							<text x="550" y="275" fill="#22c55e" fontSize="9" fontFamily="monospace" textAnchor="middle">LM324</text>
-							<text x="550" y="140" fill="#22c55e" fontSize="7" fontFamily="monospace" textAnchor="middle">#PWR012</text>
 
 							{/* Wire: Q3 collector up → right → op-amp input (orthogonal) */}
 							<line x1="430" y1="388" x2="430" y2="220" stroke="#00b4d8" strokeWidth="2.5" />
@@ -293,18 +296,25 @@ const SchematicEditor: FC = () => {
 							<text x="525" y="418" fill="#22c55e" fontSize="10" fontFamily="monospace">−</text>
 							<text x="540" y="336" fill="#22c55e" fontSize="11" fontFamily="monospace" textAnchor="middle" fontWeight="600">U3</text>
 							<text x="550" y="466" fill="#22c55e" fontSize="9" fontFamily="monospace" textAnchor="middle">LM324</text>
-							<text x="540" y="476" fill="#22c55e" fontSize="8" fontFamily="monospace" textAnchor="middle">GND</text>
-							<text x="540" y="488" fill="#22c55e" fontSize="7" fontFamily="monospace" textAnchor="middle">#PWR011</text>
 
-							{/* Wire: top op-amp output feedback → down → bottom op-amp input (orthogonal) */}
-							<line x1="620" y1="205" x2="620" y2="380" stroke="#00b4d8" strokeWidth="2" />
-							<line x1="620" y1="380" x2="510" y2="380" stroke="#00b4d8" strokeWidth="2" />
-							{/* Junction dot on output wire for feedback */}
+							{/* Wire: Vadc output → down under top op-amp → left → down → right to bottom op-amp + input */}
+							{/* Junction on Vadc wire */}
 							<circle cx="620" cy="205" r="3.5" fill="#00b4d8" />
+							{/* From junction, go down */}
+							<line x1="620" y1="205" x2="620" y2="300" stroke="#00b4d8" strokeWidth="2" />
+							{/* Go left under the top op-amp */}
+							<line x1="620" y1="300" x2="490" y2="300" stroke="#00b4d8" strokeWidth="2" />
+							{/* Down to bottom op-amp + input */}
+							<line x1="490" y1="300" x2="490" y2="380" stroke="#00b4d8" strokeWidth="2" />
+							{/* Right into bottom op-amp + input */}
+							<line x1="490" y1="380" x2="510" y2="380" stroke="#00b4d8" strokeWidth="2" />
 
-							{/* Wire: bottom op-amp − input */}
+							{/* Wire: bottom op-amp − input → down → right to Q3 GND wire */}
 							<line x1="480" y1="410" x2="510" y2="410" stroke="#00b4d8" strokeWidth="2" />
-							<line x1="480" y1="410" x2="480" y2="460" stroke="#00b4d8" strokeWidth="2" />
+							<line x1="480" y1="410" x2="480" y2="458" stroke="#00b4d8" strokeWidth="2" />
+							<line x1="480" y1="458" x2="430" y2="458" stroke="#00b4d8" strokeWidth="2" />
+							{/* Junction dot on Q3 emitter wire */}
+							<circle cx="430" cy="458" r="3.5" fill="#00b4d8" />
 
 							{/* +9V for bottom section */}
 							<line x1="660" y1="290" x2="680" y2="290" stroke="#22c55e" strokeWidth="2" />

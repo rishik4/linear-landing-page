@@ -52,14 +52,16 @@ const Hero: FC = () => {
 				<div className={styles.hero__img__container}>
 					<div className={styles.hero__illustration__container}>
 						<div className={styles.hero__illustration__perspective}>
-							<div className={styles.hero__illustration__base}>
-								<div className={styles.hero__illustration__sidebar}>
-									<Sidebar />
+							<IllustrateAnimate delay={1.5} duration={1.2}>
+								<div className={styles.hero__illustration__base}>
+									<div className={styles.hero__illustration__sidebar}>
+										<Sidebar />
+									</div>
+									<div className={styles.hero__illustration__inbox}>
+										<SchematicEditor />
+									</div>
 								</div>
-								<div className={styles.hero__illustration__inbox}>
-									<SchematicEditor />
-								</div>
-							</div>
+							</IllustrateAnimate>
 						</div>
 					</div>
 				</div>
